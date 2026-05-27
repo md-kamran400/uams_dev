@@ -35,6 +35,9 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("✅ Welcome to API.");
+});
 // ── Health check ──────────────────────────────────────────
 app.get("/api/ping", (_req, res) => {
   res.json({ ok: true, ts: new Date().toISOString() });
